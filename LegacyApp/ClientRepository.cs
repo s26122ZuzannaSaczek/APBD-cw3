@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using LegacyApp;
 
 namespace LegacyApp
 {
-    public class ClientRepository
+    public interface IClientRepository {
+        Client GetById(int clientId);
+    }
+
+    public class ClientRepository : IClientRepository
     {
         /// <summary>
         /// This collection is used to simulate remote database
@@ -27,7 +32,7 @@ namespace LegacyApp
         /// Simulating fetching a client from remote database
         /// </summary>
         /// <returns>Returning client object</returns>
-        internal Client GetById(int clientId)
+        public Client GetById(int clientId)
         {
             int randomWaitTime = new Random().Next(2000);
             Thread.Sleep(randomWaitTime);

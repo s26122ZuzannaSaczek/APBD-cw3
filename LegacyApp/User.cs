@@ -4,7 +4,7 @@ namespace LegacyApp
 {
     public class User
     {
-        public object Client { get; internal set; }
+        public Client Client { get; set; }
         public DateTime DateOfBirth { get; internal set; }
         public string EmailAddress { get; internal set; }
         public string FirstName { get; internal set; }
@@ -12,4 +12,5 @@ namespace LegacyApp
         public bool HasCreditLimit { get; internal set; }
         public int CreditLimit { get; internal set; }
     }
+    
 }
